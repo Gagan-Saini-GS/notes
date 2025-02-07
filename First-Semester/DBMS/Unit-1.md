@@ -149,8 +149,6 @@ ACID is a set of properties that ensure reliable and consistent database transac
 
 A **Database System** is a combination of software, hardware, users, and procedures that work together to **store, manage, and retrieve data efficiently**. It ensures data integrity, security, and availability for users and applications.
 
----
-
 ### **Components of a Database System**
 
 1. **Database**
@@ -448,12 +446,12 @@ A hierarchical database consists of **nodes**, representing records, and **links
 **Example:** A company’s employee database
 
 ```
-           CEO (Parent)
-            │
+          CEO (Parent)
+           │
     ┌──────┴──────┐
   Manager1      Manager2 (Children)
     │               │
-  Employee1      Employee2 (Children)
+  Employee1     Employee2 (Children)
 ```
 
 - The **CEO** is the root node (topmost parent).
@@ -484,7 +482,7 @@ The **hierarchical model** is **fast and structured** but **inflexible for moder
 
 A **Network DBMS** is a type of database model that allows **many-to-many (M:M) relationships** by using a **graph-like structure** instead of a strict hierarchy. It is an extension of the **Hierarchical Model** but provides more flexibility in data relationships.
 
-## **1. Characteristics of Network DBMS**
+### **1. Characteristics of Network DBMS**
 
 ✅ **Graph-Based Structure** – Data is organized using **nodes (records)** and **edges (relationships)**.  
 ✅ **Many-to-Many Relationships** – A child can have **multiple parents**, unlike the hierarchical model.  
@@ -492,18 +490,18 @@ A **Network DBMS** is a type of database model that allows **many-to-many (M:M) 
 ✅ **High Performance** – Optimized for **complex relationships** and **fast traversal**.  
 ✅ **Less Data Redundancy** – Eliminates data duplication by allowing multiple connections.
 
-## **2. Structure of a Network Database**
+### **2. Structure of a Network Database**
 
 A **Network DBMS** uses **records** (entities) and **sets** (relationships).
 
-### **Example: University Database**
+**Example: University Database**
 
 Consider a database with **Students, Courses, and Professors**.
 
 ```
-       (Student1) ----> (Course1) <---- (Professor1)
-          │                  │
-       (Student2) ----> (Course2) <---- (Professor2)
+       (Student1) → (Course1) ← (Professor1)
+           │            │
+       (Student2) → (Course2) ← (Professor2)
 ```
 
 - A **Student** can enroll in **multiple courses**.
@@ -512,20 +510,20 @@ Consider a database with **Students, Courses, and Professors**.
 
 This **many-to-many** relationship is **difficult in hierarchical databases** but is **easily managed in a network DBMS**.
 
-## **3. Examples of Network DBMS**
+### **3. Examples of Network DBMS**
 
 🔹 **Integrated Data Store (IDS)** – Early network DBMS used in commercial applications.  
 🔹 **IDMS (Integrated Database Management System)** – Developed by **Cullinet**.  
 🔹 **Raima Database Manager** – Still in use for embedded systems.
 
-## **4. Advantages of Network DBMS**
+### **4. Advantages of Network DBMS**
 
 ✔ **Supports Complex Relationships** – Handles **many-to-many** relationships easily.  
 ✔ **Efficient Data Access** – Uses **pointers** for fast traversal.  
 ✔ **Less Data Redundancy** – Avoids duplicate data storage.  
 ✔ **Flexibility** – More adaptable than the hierarchical model.
 
-## **5. Disadvantages of Network DBMS**
+### **5. Disadvantages of Network DBMS**
 
 ❌ **Complex Structure** – Requires **pointers and links**, making it harder to manage.  
 ❌ **Difficult to Modify** – Changes in structure require careful updates to pointers.  
@@ -562,10 +560,11 @@ A **Relational Database Management System (RDBMS)** is the most widely used data
 
 #### **2. Users Table**
 
-| User_ID | Name  | Email           |
-| ------- | ----- | --------------- |
-| 1       | Alice | alice@email.com |
-| 2       | Bob   | bob@email.com   |
+| User_ID | Name   | Email            |
+| ------- | ------ | ---------------- |
+| 1       | Gagan  | gagan@gmail.com  |
+| 2       | Gunjan | gunjan@gmail.com |
+| 3       | Sumit  | sumit@gmail.com  |
 
 #### **3. Borrowed_Books Table (Relationship Table)**
 
