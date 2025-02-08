@@ -34,9 +34,9 @@ Let's consider a simple relational database for a **Student Management System** 
 
 | Student_ID (PK) | Name   | Age | Course_ID (FK) |
 | --------------- | ------ | --- | -------------- |
-| 101             | Gagan  | 22  | C006           |
-| 102             | Gunjan | 21  | C008           |
-| 103             | Sumit  | 21  | C023           |
+| 101             | Gagan  | 22  | C001           |
+| 102             | Gunjan | 21  | C002           |
+| 103             | Sumit  | 21  | C003           |
 
 #### **Courses Table**
 
@@ -83,10 +83,6 @@ Let's consider a simple relational database for a **Student Management System** 
 
 The **Relational Data Model** provides a structured and efficient way to organize data using relations (tables). By defining **keys, constraints, and relationships**, it ensures data consistency, integrity, and easy retrieval using **SQL**.
 
-You're right! Here’s the **complete** list of **advantages and disadvantages** of the **Relational Data Model** in DBMS.
-
----
-
 ## **Advantages of the Relational Data Model**
 
 1. **Simplicity** – The tabular structure is easy to understand and use.
@@ -99,8 +95,6 @@ You're right! Here’s the **complete** list of **advantages and disadvantages**
 8. **Ensures Referential Integrity** – Foreign keys ensure that relationships between tables remain valid.
 9. **Concurrency Control** – Multiple users can work on the database simultaneously without data corruption.
 10. **Backup & Recovery Support** – Most RDBMS provide built-in tools for data backup and recovery.
-
----
 
 ## **Disadvantages of the Relational Data Model**
 
@@ -118,8 +112,6 @@ You're right! Here’s the **complete** list of **advantages and disadvantages**
 
 Integrity constraints ensure **accuracy, consistency, and reliability** of data in a relational database. The main types of integrity constraints are:
 
----
-
 ### **1. Entity Integrity Constraint**
 
 - Ensures that each table has a **unique identifier** for every row.
@@ -133,8 +125,6 @@ Integrity constraints ensure **accuracy, consistency, and reliability** of data 
   );
   ```
 - **Violation Example:** Inserting a NULL value in `Student_ID` would violate entity integrity.
-
----
 
 ### **2. Referential Integrity Constraint**
 
@@ -151,8 +141,6 @@ Integrity constraints ensure **accuracy, consistency, and reliability** of data 
   ```
 - **Violation Example:** If `Course_ID` in the **Students** table refers to a non-existent `Course_ID` in the **Courses** table, it violates referential integrity.
 
----
-
 ### **3. Domain Constraint**
 
 - Ensures that attribute values fall within a **predefined range or type**.
@@ -167,8 +155,6 @@ Integrity constraints ensure **accuracy, consistency, and reliability** of data 
   ```
 - **Violation Example:** Inserting `Age = 70` or `Salary = -500` would violate domain constraints.
 
----
-
 ### **4. Key Constraint**
 
 - Ensures that **each row is uniquely identifiable**.
@@ -182,8 +168,6 @@ Integrity constraints ensure **accuracy, consistency, and reliability** of data 
   ```
 - **Violation Example:** If two rows have the same `Product_ID`, it violates key constraints.
 
----
-
 ### **Summary of Relational Integrity Constraints**
 
 | **Constraint Type**       | **Purpose**                                        | **Example Violation**                       |
@@ -193,20 +177,20 @@ Integrity constraints ensure **accuracy, consistency, and reliability** of data 
 | **Domain Constraint**     | Values must follow **predefined types/ranges**     | `Age = -5` or `Salary = -1000`              |
 | **Key Constraint**        | Primary Key **must be unique**                     | Duplicate `Product_ID`                      |
 
+---
+
 ## **Relational Algebra & Relational Calculus in DBMS**
 
 Relational **Algebra** and **Relational Calculus** are **formal query languages** used to retrieve data from relational databases.
 
----
-
-## **1. Relational Algebra**
+### **1. Relational Algebra**
 
 - **Procedural Query Language** – Specifies how to retrieve data step by step.
 - Operates on **relations (tables)** to produce another relation.
 - Used for **query optimization** in DBMS.
 - Fundamental operations include **Selection (σ), Projection (π), Union (∪), Set Difference (-), Cartesian Product (×), and Join (⨝).**
 
-### **Basic Operations in Relational Algebra**
+#### **Basic Operations in Relational Algebra**
 
 | **Operation**         | **Symbol** | **Description**                                        |
 | --------------------- | ---------- | ------------------------------------------------------ |
@@ -217,7 +201,7 @@ Relational **Algebra** and **Relational Calculus** are **formal query languages*
 | **Cartesian Product** | ×          | Combines all rows from two relations.                  |
 | **Join**              | ⨝          | Combines related tuples based on a common attribute.   |
 
-### **Example of Relational Algebra Query**
+**Example of Relational Algebra Query**
 
 - Given **Students (Student_ID, Name, Age, Course_ID)**
 - Find students **older than 21** and **show only their names**:
@@ -227,9 +211,7 @@ Relational **Algebra** and **Relational Calculus** are **formal query languages*
   - **σ Age > 21 (Students)** → Selects students older than 21.
   - **π Name (result)** → Projects only the `Name` column.
 
----
-
-## **2. Relational Calculus**
+### **2. Relational Calculus**
 
 - **Non-Procedural Query Language** – Specifies **what** to retrieve, not **how**.
 - Uses **logical predicates** to define conditions for selecting tuples.
@@ -237,9 +219,7 @@ Relational **Algebra** and **Relational Calculus** are **formal query languages*
   1. **Tuple Relational Calculus (TRC)**
   2. **Domain Relational Calculus (DRC)**
 
----
-
-### **2.1 Tuple Relational Calculus (TRC)**
+#### **2.1 Tuple Relational Calculus (TRC)**
 
 - Uses **variables that represent tuples**.
 - Query format:
@@ -249,7 +229,7 @@ Relational **Algebra** and **Relational Calculus** are **formal query languages*
   - `t` represents a tuple from a relation.
   - The condition specifies criteria for selecting tuples.
 
-#### **Example of Tuple Relational Calculus**
+**Example of Tuple Relational Calculus**
 
 - Find students older than 21:
   ```
@@ -258,9 +238,7 @@ Relational **Algebra** and **Relational Calculus** are **formal query languages*
   - `t ∈ Students` → `t` is a tuple from the **Students** table.
   - `t.Age > 21` → Selects students older than 21.
 
----
-
-### **2.2 Domain Relational Calculus (DRC)**
+#### **2.2 Domain Relational Calculus (DRC)**
 
 - Uses **variables representing column values (domains)**.
 - Query format:
@@ -270,7 +248,7 @@ Relational **Algebra** and **Relational Calculus** are **formal query languages*
   - `<x1, x2, ... xn>` are **column values** from a relation.
   - The condition defines the selection criteria.
 
-#### **Example of Domain Relational Calculus**
+**Example of Domain Relational Calculus**
 
 - Find names of students older than 21:
   ```
@@ -279,8 +257,6 @@ Relational **Algebra** and **Relational Calculus** are **formal query languages*
   - `S ∈ Students` → `S` is a tuple from **Students**.
   - `S.Name = N` → Selects the **Name** attribute.
   - `S.Age > 21` → Filters students older than 21.
-
----
 
 ### **Comparison: Relational Algebra vs Relational Calculus**
 
@@ -291,21 +267,19 @@ Relational **Algebra** and **Relational Calculus** are **formal query languages*
 | **Operations**         | Uses selection, projection, joins, etc. | Uses logical conditions (TRC, DRC) |
 | **Query Optimization** | Helps in query execution                | More abstract                      |
 
----
-
 ### **Conclusion**
 
 - **Relational Algebra** is **step-by-step (procedural)** and used for **query execution**.
 - **Relational Calculus** is **logical (non-procedural)** and used for **query formulation**.
 - Both are fundamental to understanding **SQL queries** and **database optimization**.
 
+---
+
 ## **Introduction to SQL (Structured Query Language)**
 
 ### **What is SQL?**
 
 SQL (**Structured Query Language**) is a **standard language** used to interact with relational databases. It allows users to **store, retrieve, modify, and manage** data efficiently. SQL is used in **RDBMS** (Relational Database Management Systems) like **MySQL, PostgreSQL, SQL Server, Oracle, and SQLite**.
-
----
 
 ## **Basic SQL Commands**
 
@@ -315,8 +289,6 @@ SQL commands are categorized into **four main types**:
 2. **DML (Data Manipulation Language)**
 3. **DCL (Data Control Language)**
 4. **TCL (Transaction Control Language)**
-
----
 
 ## **1. DDL (Data Definition Language) – Defines Database Structure**
 
@@ -351,8 +323,6 @@ ALTER TABLE Students ADD Email VARCHAR(100);
 ```sql
 DROP TABLE Students;
 ```
-
----
 
 ## **2. DML (Data Manipulation Language) – Works with Data**
 
@@ -390,8 +360,6 @@ UPDATE Students SET Age = 23 WHERE Student_ID = 101;
 DELETE FROM Students WHERE Student_ID = 101;
 ```
 
----
-
 ## **3. DCL (Data Control Language) – Manages User Permissions**
 
 DCL commands control **access rights** and **permissions** in a database.
@@ -413,8 +381,6 @@ GRANT SELECT ON Students TO user1;
 ```sql
 REVOKE SELECT ON Students FROM user1;
 ```
-
----
 
 ## **4. TCL (Transaction Control Language) – Manages Transactions**
 
@@ -453,8 +419,6 @@ DELETE FROM Students WHERE Age < 20;
 ROLLBACK TO save1; -- Undoes the delete but keeps the update
 ```
 
----
-
 ### **Conclusion**
 
 SQL is a powerful language used for **database creation, data retrieval, modification, access control, and transaction management**.
@@ -464,13 +428,13 @@ SQL is a powerful language used for **database creation, data retrieval, modific
 - **DCL** controls access permissions.
 - **TCL** ensures data integrity using transactions.
 
-# **SQL Data Types, Literals, and Operators**
+## **SQL Data Types, Literals, and Operators**
 
-## **1. SQL Data Types**
+### **1. SQL Data Types**
 
 SQL data types define the **type of data** that can be stored in a column. Different databases (MySQL, PostgreSQL, SQL Server, Oracle) have slight variations, but the core data types remain the same.
 
-### **Categories of SQL Data Types**
+#### **Categories of SQL Data Types**
 
 | **Category**         | **Data Type**                  | **Description**                                |
 | -------------------- | ------------------------------ | ---------------------------------------------- |
@@ -498,13 +462,11 @@ CREATE TABLE Employees (
 );
 ```
 
----
-
-## **2. SQL Literals**
+### **2. SQL Literals**
 
 Literals are **constant values** used in SQL statements. They can be of different types:
 
-### **Types of SQL Literals**
+#### **Types of SQL Literals**
 
 | **Literal Type** | **Example**                  | **Description**                    |
 | ---------------- | ---------------------------- | ---------------------------------- |
@@ -519,15 +481,13 @@ Literals are **constant values** used in SQL statements. They can be of differen
 SELECT * FROM Employees WHERE Name = 'John' AND Salary > 5000;
 ```
 
----
-
-## **3. SQL Operators**
+### **3. SQL Operators**
 
 SQL operators are used in **conditions and expressions** to manipulate data.
 
-### **Types of SQL Operators**
+#### **Types of SQL Operators**
 
-### **A. Arithmetic Operators**
+#### **A. Arithmetic Operators**
 
 Used for mathematical calculations.  
 | **Operator** | **Description** | **Example** (`a = 10`, `b = 5`) |
@@ -544,9 +504,7 @@ Used for mathematical calculations.
 SELECT Employee_ID, Salary, Salary * 1.10 AS New_Salary FROM Employees;
 ```
 
----
-
-### **B. Comparison Operators**
+#### **B. Comparison Operators**
 
 Used for filtering rows in `WHERE` clauses.  
 | **Operator** | **Description** | **Example** (`a = 10`, `b = 5`) |
@@ -564,9 +522,7 @@ Used for filtering rows in `WHERE` clauses.
 SELECT * FROM Employees WHERE Salary >= 5000;
 ```
 
----
-
-### **C. Logical Operators**
+#### **C. Logical Operators**
 
 Used for combining conditions in `WHERE` clauses.  
 | **Operator** | **Description** | **Example** (`a = 10`, `b = 5`) |
@@ -581,9 +537,7 @@ Used for combining conditions in `WHERE` clauses.
 SELECT * FROM Employees WHERE Salary > 5000 AND Is_Active = TRUE;
 ```
 
----
-
-### **D. Special Operators**
+#### **D. Special Operators**
 
 Used for pattern matching and value checking.  
 | **Operator** | **Description** | **Example** |
@@ -601,7 +555,7 @@ SELECT * FROM Employees WHERE Name LIKE 'A%' AND Salary BETWEEN 3000 AND 8000;
 
 ---
 
-# **Database Objects in SQL**
+## **Database Objects in SQL**
 
 Database objects are **structures** used to store, organize, and manage data in a database. The main database objects include:
 
@@ -612,9 +566,7 @@ Database objects are **structures** used to store, organize, and manage data in 
 5. **Synonym**
 6. **Queries**
 
----
-
-## **1. Table**
+### **1. Table**
 
 A **table** is the fundamental database object used to store data in **rows and columns**. Each row (record) represents a unique entry, and each column represents a specific attribute.
 
@@ -637,13 +589,11 @@ INSERT INTO Employees (Employee_ID, Name, Salary, Department, Hire_Date)
 VALUES (101, 'John Doe', 5000, 'IT', '2024-01-15');
 ```
 
----
-
-## **2. View**
+### **2. View**
 
 A **view** is a **virtual table** based on a SQL query. It does not store data itself but presents data from one or more tables.
 
-### **Advantages of Views**
+#### **Advantages of Views**
 
 ✔ Simplifies complex queries  
 ✔ Enhances security by restricting access to certain columns  
@@ -662,9 +612,7 @@ SELECT Name, Salary FROM Employees WHERE Department = 'IT';
 SELECT * FROM IT_Employees;
 ```
 
----
-
-## **3. Sequence**
+### **3. Sequence**
 
 A **sequence** is used to **generate unique numbers automatically**, often for **primary key values**.
 
@@ -684,13 +632,11 @@ INSERT INTO Employees (Employee_ID, Name, Salary, Department)
 VALUES (Employee_Seq.NEXTVAL, 'Alice', 6000, 'HR');
 ```
 
----
-
-## **4. Index**
+### **4. Index**
 
 An **index** is used to **speed up data retrieval** by reducing search time. It improves query performance but slightly slows down `INSERT`, `UPDATE`, and `DELETE` operations.
 
-### **Types of Indexes**
+#### **Types of Indexes**
 
 ✔ **Primary Index** – Automatically created on **Primary Key**  
 ✔ **Unique Index** – Ensures unique values in a column  
@@ -709,9 +655,7 @@ CREATE INDEX idx_salary ON Employees(Salary);
 SELECT * FROM Employees WHERE Salary > 5000;
 ```
 
----
-
-## **5. Synonym**
+### **5. Synonym**
 
 A **synonym** is an **alias** for a database object (table, view, sequence, etc.). It simplifies queries and helps with security.
 
@@ -727,40 +671,36 @@ CREATE SYNONYM Emp FOR Employees;
 SELECT * FROM Emp;
 ```
 
----
-
-## **6. Queries in SQL**
+### **6. Queries in SQL**
 
 A **query** is a request to retrieve, insert, update, or delete data. The most common queries include:
 
-### **(A) SELECT Query (Retrieving Data)**
+#### **(A) SELECT Query (Retrieving Data)**
 
 ```sql
 SELECT Name, Salary FROM Employees WHERE Salary > 5000;
 ```
 
-### **(B) INSERT Query (Adding Data)**
+#### **(B) INSERT Query (Adding Data)**
 
 ```sql
 INSERT INTO Employees (Employee_ID, Name, Salary, Department)
 VALUES (102, 'Robert', 7500, 'Finance');
 ```
 
-### **(C) UPDATE Query (Modifying Data)**
+#### **(C) UPDATE Query (Modifying Data)**
 
 ```sql
 UPDATE Employees SET Salary = 8000 WHERE Employee_ID = 102;
 ```
 
-### **(D) DELETE Query (Removing Data)**
+#### **(D) DELETE Query (Removing Data)**
 
 ```sql
 DELETE FROM Employees WHERE Employee_ID = 102;
 ```
 
----
-
-### **Conclusion**
+#### **Conclusion**
 
 - **Tables** store data in a structured format.
 - **Views** simplify and secure data retrieval.
@@ -769,18 +709,18 @@ DELETE FROM Employees WHERE Employee_ID = 102;
 - **Synonyms** provide aliases for database objects.
 - **Queries** manipulate data using `SELECT`, `INSERT`, `UPDATE`, and `DELETE`.
 
-# **Advanced SQL Concepts**
+---
 
-## **1. SQL Functions**
+## **Advanced SQL Concepts**
+
+### **1. SQL Functions**
 
 SQL **functions** are built-in operations that manipulate data and return results. They are categorized into:
 
 1. **Single-Row Functions** – Operate on each row individually.
 2. **Aggregate Functions** – Operate on multiple rows and return a **single** result.
 
----
-
-### **1.1 Single-Row Functions**
+#### **1.1 Single-Row Functions**
 
 These functions return a single value for each row in the result set.
 
@@ -805,9 +745,7 @@ SELECT NOW() AS CurrentDateTime, YEAR(Hire_Date) AS HireYear
 FROM Employees;
 ```
 
----
-
-### **1.2 Aggregate Functions**
+#### **1.2 Aggregate Functions**
 
 These functions **perform calculations** on multiple rows and return a **single** value.
 
@@ -832,13 +770,11 @@ FROM Employees
 GROUP BY Department;
 ```
 
----
-
-## **2. Subqueries**
+### **2. Subqueries**
 
 A **subquery** is a query inside another query. It is used to fetch intermediate results.
 
-### **Types of Subqueries**
+#### **Types of Subqueries**
 
 | **Type**                | **Description**             |
 | ----------------------- | --------------------------- |
@@ -862,13 +798,11 @@ FROM Employees
 WHERE Department IN (SELECT Department FROM Departments WHERE Location = 'New York');
 ```
 
----
-
-## **3. Join Operations**
+### **3. Join Operations**
 
 A **JOIN** is used to **combine data from multiple tables** based on a common column.
 
-### **Types of Joins in SQL**
+#### **Types of Joins in SQL**
 
 | **Join Type**       | **Description**                                                                        |
 | ------------------- | -------------------------------------------------------------------------------------- |
@@ -879,9 +813,7 @@ A **JOIN** is used to **combine data from multiple tables** based on a common co
 | **SELF JOIN**       | Joins a table with itself.                                                             |
 | **CROSS JOIN**      | Returns the Cartesian product of two tables.                                           |
 
----
-
-### **3.1 INNER JOIN**
+#### **3.1 INNER JOIN**
 
 🔹 **Example: Get Employee Details with Department Name**
 
@@ -891,9 +823,7 @@ FROM Employees
 INNER JOIN Departments ON Employees.Department_ID = Departments.Department_ID;
 ```
 
----
-
-### **3.2 LEFT JOIN**
+#### **3.2 LEFT JOIN**
 
 🔹 **Example: Retrieve all employees and their department names (including employees without a department)**
 
@@ -903,9 +833,7 @@ FROM Employees
 LEFT JOIN Departments ON Employees.Department_ID = Departments.Department_ID;
 ```
 
----
-
-### **3.3 RIGHT JOIN**
+#### **3.3 RIGHT JOIN**
 
 🔹 **Example: Retrieve all departments and their employees (including departments with no employees)**
 
@@ -915,9 +843,7 @@ FROM Employees
 RIGHT JOIN Departments ON Employees.Department_ID = Departments.Department_ID;
 ```
 
----
-
-### **3.4 FULL OUTER JOIN**
+#### **3.4 FULL OUTER JOIN**
 
 🔹 **Example: Retrieve all employees and departments (even if there is no match)**
 
@@ -927,9 +853,7 @@ FROM Employees
 FULL OUTER JOIN Departments ON Employees.Department_ID = Departments.Department_ID;
 ```
 
----
-
-### **3.5 SELF JOIN**
+#### **3.5 SELF JOIN**
 
 🔹 **Example: Find Employees and Their Managers**
 
@@ -939,16 +863,16 @@ FROM Employees A, Employees B
 WHERE A.Manager_ID = B.Employee_ID;
 ```
 
----
-
-### **Conclusion**
+#### **Conclusion**
 
 - **Single-Row Functions** operate on individual rows.
 - **Aggregate Functions** perform calculations on multiple rows.
 - **Subqueries** allow nested queries for complex operations.
 - **Joins** combine data from multiple tables.
 
-# **Set Operations in SQL**
+---
+
+## **Set Operations in SQL**
 
 SQL **Set Operations** are used to combine the results of two or more `SELECT` queries. The main set operations are:
 
@@ -957,14 +881,12 @@ SQL **Set Operations** are used to combine the results of two or more `SELECT` q
 3. **INTERSECT** – Returns common records.
 4. **MINUS** (EXCEPT in SQL Server) – Returns records present in the first query but not in the second.
 
-### **Rules for Set Operations:**
+#### **Rules for Set Operations:**
 
 ✔ Each `SELECT` must have the **same number of columns**.  
 ✔ Corresponding columns must have **compatible data types**.
 
----
-
-## **1. UNION**
+### **1. UNION**
 
 The `UNION` operator **combines results** from multiple `SELECT` statements and removes **duplicates**.
 
@@ -976,9 +898,7 @@ UNION
 SELECT Name FROM Employees WHERE Department = 'IT';
 ```
 
----
-
-## **2. UNION ALL**
+### **2. UNION ALL**
 
 The `UNION ALL` operator **combines results** but **does not remove duplicates**.
 
@@ -990,9 +910,7 @@ UNION ALL
 SELECT Name FROM Employees WHERE Department = 'IT';
 ```
 
----
-
-## **3. INTERSECT**
+### **3. INTERSECT**
 
 The `INTERSECT` operator returns **only the common records** from both queries.
 
@@ -1006,9 +924,7 @@ SELECT Name FROM Employees WHERE Department = 'IT';
 
 ✅ **Note:** Not supported in MySQL (Use `INNER JOIN` instead).
 
----
-
-## **4. MINUS (EXCEPT in SQL Server)**
+### **4. MINUS (EXCEPT in SQL Server)**
 
 The `MINUS` operator returns records from the **first query** that **do not exist** in the second query.
 
@@ -1031,9 +947,7 @@ EXCEPT
 SELECT Name FROM Employees WHERE Department = 'IT';
 ```
 
----
-
-### **Conclusion**
+#### **Conclusion**
 
 | **Operator**       | **Description**                                                  |
 | ------------------ | ---------------------------------------------------------------- |
