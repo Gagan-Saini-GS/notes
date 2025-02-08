@@ -153,11 +153,11 @@ PL/SQL supports various operators for performing arithmetic, comparison, logical
 ### **Types of Operators**
 
 | **Operator Type** | **Example**           | **Description**                   |
-| ----------------- | --------------------- | --------------------------------- | --- | --------------------------- |
+| ----------------- | --------------------- | --------------------------------- |
 | **Arithmetic**    | `+, -, *, /, MOD`     | Performs mathematical operations. |
 | **Comparison**    | `=, !=, >, <, >=, <=` | Used for comparing values.        |
 | **Logical**       | `AND, OR, NOT`        | Used in conditional statements.   |
-| **Concatenation** | `                     |                                   | `   | Joins two strings together. |
+| **Concatenation** | `Symbol or OR`        | Joins two strings together.       |
 | **Assignment**    | `:=`                  | Assigns a value to a variable.    |
 
 **Example:**
