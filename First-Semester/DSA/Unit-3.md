@@ -4,7 +4,7 @@
 
 ### Structure
 
-```
+```cpp
 class Node
 {
 public:
@@ -21,7 +21,7 @@ public:
 
 ### Take Input
 
-```
+```cpp
 Node *takeInput()
 {
     int data;
@@ -51,7 +51,7 @@ Node *takeInput()
 
 ### Print LL
 
-```
+```cpp
 void print(Node *head)
 {
     Node *temp = head;
@@ -68,7 +68,7 @@ void print(Node *head)
 
 1. **Iterative Method**
 
-```
+```cpp
 int length(Node* head){
     int count = 0;
     Node* temp = head;
@@ -84,7 +84,7 @@ int length(Node* head){
 
 2. **Recursive Method**
 
-```
+```cpp
 int length(Node* head){
     if(head == NULL){
         // Base case length is 0;
@@ -99,7 +99,7 @@ int length(Node* head){
 
 1. **Iterative Method**
 
-```
+```cpp
 Node* insertData(Node* head, int pos, int data){
     Node* newNode = new Node(data);
 
@@ -125,7 +125,7 @@ Node* insertData(Node* head, int pos, int data){
 
 2. **Recursive Method**
 
-```
+```cpp
 Node* insertRecursively(Node* head,int pos, int data){
     Node* temp = head;
     if(pos == 0){
@@ -147,7 +147,7 @@ Node* insertRecursively(Node* head,int pos, int data){
 
 1. **Iterative Method**
 
-```
+```cpp
 Node* deleteData(Node* head, int pos){
     if(pos == 0){
         // Delete from head;
@@ -177,7 +177,7 @@ Node* deleteData(Node* head, int pos){
 
 2. **Recursive Method**
 
-```
+```cpp
 Node* deleteRecursively(Node* head, int pos){
     Node* temp = head;
     if(pos == 0){
@@ -198,7 +198,7 @@ Node* deleteRecursively(Node* head, int pos){
 
 1. **Length/2 Method**
 
-```
+```cpp
 Node* midPoint(Node* head) {
     if (!head) return nullptr; // Empty list
 
@@ -217,7 +217,7 @@ Node* midPoint(Node* head) {
 
 2. **Slow & Fast Method (Hear & Tortoise Method)**
 
-```
+```cpp
 int midPoint(Node* head){
     Node* slow = head;
     Node* fast = head->next;
@@ -238,7 +238,7 @@ int midPoint(Node* head){
 Time Complexity (TC) → `O(N*N)`
 Space Complexity (SC) → `O(N)` → Recursive Space
 
-```
+```cpp
 Node *reverseLL1(Node *head)
 {
     if (head == NULL || head->next == NULL)
@@ -259,7 +259,7 @@ Node *reverseLL1(Node *head)
 
 2. **Recursive Method with Pair**
 
-```
+```cpp
 class Pair
 {
     public:
@@ -297,8 +297,7 @@ Node *reverseLL2_call(Node *head)
 
 3. **Recursive Method (Most Effective)**
 
-```
-
+```cpp
 Node *reverseLL3(Node *head)
 {
     if (head == NULL || head->next == NULL)
@@ -315,8 +314,7 @@ Node *reverseLL3(Node *head)
 
 4. **Iterative Method**
 
-```
-
+```cpp
 Node *reverseLL4(Node *head)
 {
     Node *prev = NULL;
@@ -352,7 +350,7 @@ Node *reverseLL4(Node *head)
 
 ### Structure
 
-```
+```cpp
 class Node{
     public:
     int data;
@@ -369,7 +367,7 @@ class Node{
 
 ### Take Input
 
-```
+```cpp
 Node* takeInput(){
     int data;
     cin>>data;
@@ -398,7 +396,7 @@ Node* takeInput(){
 
 ### Print
 
-```
+```cpp
 void print(Node* head){
     Node* temp = head;
     while(temp->next != NULL){
@@ -572,7 +570,7 @@ int main() {
 
 1. **Using Array**
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -637,7 +635,7 @@ public:
 
 ↳ How to use
 
-```
+```cpp
 int main()
 {
     StackUsingArray<int> s;
@@ -663,7 +661,7 @@ int main()
 
 2. **Using Linked List**
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -790,7 +788,7 @@ public:
 
 ↳ How to use
 
-```
+```cpp
 int main()
 {
 
@@ -821,7 +819,7 @@ int main()
 
 ### Balanced Parathensis Question
 
-```
+```cpp
 #include <iostream>
 #include "StackUsingLL.h"
 using namespace std;
@@ -871,7 +869,7 @@ int main()
 
 1. **Using Array**
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -962,7 +960,7 @@ public:
 
 ↳ How to use
 
-```
+```cpp
 #include <iostream>
 #include "QueueUsingArray.h"
 using namespace std;
@@ -1000,7 +998,7 @@ int main()
 
 2. **Using Linked List**
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -1125,7 +1123,7 @@ public:
 
 ↳ How to use
 
-```
+```cpp
 #include <iostream>
 #include "QueueUsingLL.h"
 using namespace std;
@@ -1156,7 +1154,7 @@ int main()
 
 3. **Queue Using Stack**
 
-```
+```cpp
 #include <iostream>
 #include <stack>
 using namespace std;

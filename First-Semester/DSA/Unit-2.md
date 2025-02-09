@@ -2,7 +2,7 @@
 
 ## Array
 
-```
+```cpp
 int main()
 {
     int n;
@@ -29,7 +29,7 @@ int main()
 
 ## 2D Array (Matrix)
 
-```
+```cpp
 int main()
 {
     int n, m;
@@ -215,7 +215,7 @@ int main() {
 
 1. **Insertion Sort**
 
-```
+```cpp
 void insertionSort(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
@@ -232,7 +232,7 @@ void insertionSort(int arr[], int n)
 
 2. **Bubble Sort**
 
-```
+```cpp
 void bubbleSort(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
@@ -248,7 +248,7 @@ void bubbleSort(int arr[], int n)
 
 3. **Selection Sort**
 
-```
+```cpp
 void selectionSort(int arr[], int n)
 {
     int firstIndex = 0;
@@ -274,7 +274,7 @@ void selectionSort(int arr[], int n)
 
 4.  **Merge Sort**
 
-```
+```cpp
 void merge(int arr[], int s, int mid, int e)
 {
     int n1 = mid - s + 1;
@@ -341,7 +341,7 @@ void mergeSort(int arr[], int s, int e)
 TC -> Best Case -> O(NlogN) & Average Case -> O(NlogN) & Worst Case -> O(N^2)
 SC -> O(N)
 
-```
+```cpp
 int parition(int arr[], int s, int e)
 {
     // Step 1: Find the Pivot Point.
@@ -396,7 +396,7 @@ void quickSort(int arr[], int s, int e)
 
 ### Main Function
 
-```
+```cpp
 int main()
 {
     int n;
@@ -589,3 +589,7 @@ int main() {
 ✅ **Efficient for Medium-Sized Data Sets** – Performs well on moderately large arrays.  
 ✅ **Works Well for Partially Sorted Data** – Useful when data is nearly sorted.  
 ❌ **Not a Stable Sort** – Relative order of equal elements may change.
+
+---
+
+## **`Gagan Saini`**
