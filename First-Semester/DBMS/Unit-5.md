@@ -125,7 +125,7 @@ T1 reads old version of A → T2 writes new version of A
 | **Optimistic Control (OCC)** | Checks conflicts before commit     | Good for low-contention cases | High rollback rate  |
 | **MVCC**                     | Keeps multiple versions of data    | Readers & writers don’t block | Uses more storage   |
 
-#### **Conclusion**
+### **Conclusion**
 
 Concurrency control is essential to maintain **database integrity and performance**. The choice of technique depends on the **use case**:
 
@@ -228,7 +228,7 @@ To recover from catastrophic failures, databases implement **disaster recovery s
 | **Catastrophic Failure**                  | Severe failure causing total data loss.             |
 | **Recovery Methods**                      | Backups, replication, RAID, and log-based recovery. |
 
-#### **Conclusion**
+### **Conclusion**
 
 - **Choosing the right granularity** affects database performance and concurrency.
 - **Disaster recovery planning** is crucial for preventing catastrophic data loss.
@@ -304,7 +304,7 @@ class Student {
 
 - Here, a **Student** object contains a list of **Course** objects, representing a **real-world relationship**.
 
-### **Popular OODBMS Examples**
+#### **Popular OODBMS Examples**
 
 - **ObjectDB**
 - **db4o**
