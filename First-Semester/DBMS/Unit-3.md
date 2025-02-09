@@ -64,7 +64,7 @@ Here, **X** is called the **determinant**, and **Y** is the **dependent attribut
 
 Understanding functional dependencies helps design efficient, consistent, and anomaly-free databases. 🚀
 
-### **Introduction to PL/SQL**
+## **Introduction to PL/SQL**
 
 **PL/SQL (Procedural Language/Structured Query Language)** is Oracle’s extension of SQL that allows procedural programming, including loops, conditions, functions, and exception handling. It enhances SQL by providing features such as **variables, control structures, procedures, and triggers**, making it more powerful for database applications.
 
@@ -76,9 +76,7 @@ Understanding functional dependencies helps design efficient, consistent, and an
 - **Improved Performance** – Reduces **network traffic** by sending multiple SQL statements at once.
 - **Security** – Can be used to create **stored procedures** that encapsulate business logic.
 
----
-
-## **Structure of a PL/SQL Block**
+### **Structure of a PL/SQL Block**
 
 A **PL/SQL block** is the basic unit of PL/SQL programming. It consists of three main sections:
 
@@ -118,9 +116,7 @@ END;
 /
 ```
 
----
-
-## **Types of PL/SQL Blocks**
+### **Types of PL/SQL Blocks**
 
 1. **Anonymous Block** – A block that does not have a name and is executed instantly.
 2. **Named Blocks** – These include:
@@ -128,8 +124,6 @@ END;
    - **Functions** – Return a value and can be used in SQL statements.
    - **Triggers** – Automatic execution on specific events (e.g., `BEFORE INSERT`).
    - **Packages** – Groups related procedures and functions.
-
----
 
 ### **Advantages of PL/SQL**
 
@@ -140,17 +134,15 @@ END;
 
 PL/SQL is widely used in **database-driven applications** where business logic needs to be executed at the database level efficiently. 🚀
 
-# **PL/SQL Language**
+## **PL/SQL Language**
 
 PL/SQL (Procedural Language/Structured Query Language) is Oracle’s procedural extension of SQL, allowing programming capabilities like variables, loops, conditions, and error handling within SQL statements.
 
----
-
-## **1. Operators in PL/SQL**
+### **1. Operators in PL/SQL**
 
 PL/SQL supports various operators for performing arithmetic, comparison, logical, and string operations.
 
-### **Types of Operators**
+#### **Types of Operators**
 
 | **Operator Type** | **Example**           | **Description**                   |
 | ----------------- | --------------------- | --------------------------------- |
@@ -174,13 +166,11 @@ END;
 /
 ```
 
----
-
-## **2. Control Structures in PL/SQL**
+### **2. Control Structures in PL/SQL**
 
 PL/SQL provides control structures to handle decision-making and looping.
 
-### **Conditional Statements:**
+#### **Conditional Statements:**
 
 - **IF-THEN**
 - **IF-THEN-ELSE**
@@ -202,7 +192,7 @@ END;
 /
 ```
 
-### **Looping Statements:**
+#### **Looping Statements:**
 
 - **LOOP (Basic Loop)**
 - **WHILE LOOP**
@@ -219,13 +209,11 @@ END;
 /
 ```
 
----
-
-## **3. Cursors in PL/SQL**
+### **3. Cursors in PL/SQL**
 
 A **cursor** is a pointer to a result set of a SQL query, used for row-by-row processing.
 
-### **Types of Cursors:**
+#### **Types of Cursors:**
 
 1. **Implicit Cursor** – Automatically created for SQL queries like `SELECT` and `UPDATE`.
 2. **Explicit Cursor** – Defined by the user for complex query processing.
@@ -248,13 +236,11 @@ END;
 /
 ```
 
----
-
-## **4. Triggers in PL/SQL**
+### **4. Triggers in PL/SQL**
 
 A **trigger** is a stored PL/SQL block that automatically executes in response to certain database events.
 
-### **Types of Triggers:**
+#### **Types of Triggers:**
 
 - **Before Trigger** – Executes before an event (`INSERT`, `UPDATE`, `DELETE`).
 - **After Trigger** – Executes after an event.
@@ -272,9 +258,7 @@ END;
 /
 ```
 
----
-
-## **5. Procedures in PL/SQL**
+### **5. Procedures in PL/SQL**
 
 A **procedure** is a named PL/SQL block that performs a specific task but does not return a value.
 
@@ -290,7 +274,7 @@ END;
 /
 ```
 
-### **Calling the Procedure:**
+#### **Calling the Procedure:**
 
 ```plsql
 BEGIN
@@ -299,13 +283,11 @@ END;
 /
 ```
 
----
-
-## **6. Functions in PL/SQL**
+### **6. Functions in PL/SQL**
 
 A **function** is similar to a procedure but always returns a value.
 
-### **Syntax:**
+#### **Syntax:**
 
 ```plsql
 CREATE OR REPLACE FUNCTION get_salary (emp_id IN NUMBER) RETURN NUMBER AS
@@ -317,7 +299,7 @@ END;
 /
 ```
 
-### **Calling the Function:**
+#### **Calling the Function:**
 
 ```plsql
 DECLARE
@@ -328,8 +310,6 @@ BEGIN
 END;
 /
 ```
-
----
 
 ### **Summary of PL/SQL Components**
 
