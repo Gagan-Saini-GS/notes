@@ -4,9 +4,7 @@
 
 Concurrency control ensures that multiple transactions execute **safely and correctly** without leading to data inconsistencies in a multi-user database environment. It prevents issues like **dirty reads, lost updates, and uncommitted data access** while maintaining the **ACID properties**.
 
----
-
-### **1. Concurrency Control Techniques**
+### **Concurrency Control Techniques**
 
 Concurrency control ensures that transactions are executed **in a controlled manner** to maintain **serializability and isolation**. The main techniques are:
 
@@ -15,9 +13,7 @@ Concurrency control ensures that transactions are executed **in a controlled man
 3. **Optimistic Concurrency Control**
 4. **Multiversion Concurrency Control (MVCC)**
 
----
-
-### **2. Locking Techniques**
+### **1. Locking Techniques**
 
 Locking is a **pessimistic concurrency control** technique that prevents multiple transactions from accessing the same data simultaneously in a conflicting manner.
 
@@ -34,7 +30,7 @@ Locking is a **pessimistic concurrency control** technique that prevents multipl
   1. **Growing Phase:** Transactions acquire locks but **do not release them**.
   2. **Shrinking Phase:** Transactions release locks but **do not acquire new ones**.
 
-#### **Example of 2PL**
+**Example of 2PL**
 
 ```
 T1: Lock-X(A), Write(A), Lock-X(B), Write(B), Unlock(A), Unlock(B)
@@ -57,9 +53,7 @@ Deadlocks occur when transactions wait indefinitely for each other’s locked re
 - **Wait-Die:** Older transaction waits; younger one is aborted.
 - **Wound-Wait:** Older transaction forces younger one to abort.
 
----
-
-### **3. Timestamp Ordering Protocol**
+### **2. Timestamp Ordering Protocol**
 
 The **Timestamp Ordering Protocol (TO)** is a **non-locking** concurrency control mechanism that ensures transactions execute in a **timestamp order**.
 
@@ -79,7 +73,7 @@ The **Timestamp Ordering Protocol (TO)** is a **non-locking** concurrency contro
 ✅ **No deadlocks** (since transactions do not wait)  
 ❌ **Aborts transactions frequently** (especially in a highly concurrent system)
 
-#### **Example of Timestamp Ordering**
+**Example of Timestamp Ordering**
 
 ```
 T1 (TS=5) reads A → T2 (TS=8) writes A → T1 tries to write A (ABORT)
@@ -87,9 +81,7 @@ T1 (TS=5) reads A → T2 (TS=8) writes A → T1 tries to write A (ABORT)
 
 - T1 is aborted since it is trying to overwrite a newer version.
 
----
-
-### **4. Optimistic Concurrency Control (OCC)**
+### **3. Optimistic Concurrency Control (OCC)**
 
 OCC assumes that **conflicts are rare** and allows transactions to execute **without locking**. It validates transactions **before commit**.
 
@@ -105,9 +97,7 @@ OCC assumes that **conflicts are rare** and allows transactions to execute **wit
 ✅ **No deadlocks**  
 ❌ **High rollback rate in high-contention systems**
 
----
-
-### **5. Multiversion Concurrency Control (MVCC)**
+### **4. Multiversion Concurrency Control (MVCC)**
 
 MVCC maintains **multiple versions** of data items, allowing **concurrent reads and writes**.
 
@@ -118,7 +108,7 @@ MVCC maintains **multiple versions** of data items, allowing **concurrent reads 
 ✅ **No read locks needed**  
 ❌ **Requires more storage**
 
-#### **Example of MVCC**
+**Example of MVCC**
 
 ```
 T1 reads old version of A → T2 writes new version of A
@@ -126,9 +116,7 @@ T1 reads old version of A → T2 writes new version of A
 
 - Readers don’t block writers, and writers don’t block readers.
 
----
-
-### **6. Summary Table**
+### **Summary Table**
 
 | **Technique**                | **How It Works?**                  | **Pros**                      | **Cons**            |
 | ---------------------------- | ---------------------------------- | ----------------------------- | ------------------- |
@@ -147,6 +135,8 @@ Concurrency control is essential to maintain **database integrity and performanc
 - **High read operations?** → **MVCC**
 
 🚀 **Choosing the right technique optimizes database performance while ensuring correctness!**
+
+---
 
 ## **Granularity of Data Items & Recovery from Catastrophic Failures in DBMS**
 
@@ -175,12 +165,10 @@ Granularity refers to the **size of the data item** that a transaction locks or 
   - ✅ Reduces locking overhead.
   - ❌ Increases contention, reduces concurrency.
 
-#### **Example of Granularity in Locking**
+**Example of Granularity in Locking**
 
 - **Coarse Locking:** If a transaction locks an entire table, no other transaction can access any row in that table.
 - **Fine Locking:** If a transaction locks only one row, other transactions can modify other rows simultaneously.
-
----
 
 ### **2. Recovery from Catastrophic Failures**
 
@@ -224,15 +212,13 @@ To recover from catastrophic failures, databases implement **disaster recovery s
    - **Cold Site:** A backup facility that requires setup after failure.
    - **Hot Site:** A fully functional backup system that can take over immediately.
 
-#### **Example of Recovery Process**
+**Example of Recovery Process**
 
 1. Restore the latest **full database backup**.
 2. Apply the most recent **incremental or differential backups**.
 3. Use **log-based recovery (Redo logs)** to apply committed transactions.
 
----
-
-### **3. Summary Table**
+### **Summary Table**
 
 | **Concept**                               | **Description**                                     |
 | ----------------------------------------- | --------------------------------------------------- |
@@ -248,6 +234,8 @@ To recover from catastrophic failures, databases implement **disaster recovery s
 - **Disaster recovery planning** is crucial for preventing catastrophic data loss.
 
 🚀 **Using backups, replication, and logging ensures data safety in critical failures!**
+
+---
 
 ## **Concepts of Object-Oriented DBMS (OODBMS) & Distributed DBMS (DDBMS)**
 
@@ -304,7 +292,7 @@ An **Object-Oriented Database Management System (OODBMS)** integrates **object-o
 ❌ **Limited adoption** (traditional RDBMS is more widely used).  
 ❌ **Query performance** may be lower than relational databases for some operations.
 
-#### **Example of OODBMS**
+**Example of OODBMS**
 
 ```
 class Student {
@@ -322,8 +310,6 @@ class Student {
 - **db4o**
 - **Versant**
 - **ODMG (Object Data Management Group) Standard**
-
----
 
 ### **2. Distributed DBMS (DDBMS)**
 
@@ -352,8 +338,6 @@ A **Distributed Database Management System (DDBMS)** manages a database that is 
 
 5. **Fault Tolerance**
    - If one site fails, others continue to function (**high availability**).
-
----
 
 #### **Types of Distributed Databases**
 
@@ -390,7 +374,7 @@ A **Distributed Database Management System (DDBMS)** manages a database that is 
 ❌ **Security Risks** (Data is transferred over a network, increasing vulnerabilities).  
 ❌ **High Maintenance Costs** (More resources needed for synchronization and consistency).
 
-#### **Example of Distributed DBMS**
+**Example of Distributed DBMS**
 
 Imagine a **global e-commerce company** like Amazon:
 
@@ -406,8 +390,6 @@ Imagine a **global e-commerce company** like Amazon:
 - **Oracle Distributed Database**
 - **Apache Cassandra** (NoSQL-based distributed DBMS)
 
----
-
 ### **3. Comparison: OODBMS vs. DDBMS**
 
 | **Feature**        | **OODBMS**                              | **DDBMS**                                     |
@@ -418,22 +400,20 @@ Imagine a **global e-commerce company** like Amazon:
 | **Performance**    | Efficient for object-based applications | Efficient for geographically distributed data |
 | **Example DBMS**   | ObjectDB, db4o                          | Google Spanner, Cassandra                     |
 
----
-
-### **4. Conclusion**
+### **Conclusion**
 
 - **OODBMS** is ideal for **object-oriented applications**, handling **complex data** efficiently.
 - **DDBMS** is best suited for **distributed environments**, offering **scalability, fault tolerance, and improved performance**.
 
 🚀 **Choosing between OODBMS & DDBMS depends on application needs!**
 
+---
+
 ## **Overview of Database Security Concepts**
 
 ### **1. What is Database Security?**
 
 Database security refers to **protecting the database** from unauthorized access, misuse, and threats such as data breaches, cyberattacks, and accidental data loss. It ensures **confidentiality, integrity, and availability** (CIA Triad) of database systems.
-
----
 
 ### **2. Key Concepts of Database Security**
 
@@ -489,8 +469,6 @@ Database security refers to **protecting the database** from unauthorized access
 - Use **strong passwords** and enforce **multi-factor authentication (MFA)**.
 - Implement **least privilege principle (PoLP)**—users should have **only** the access they need.
 
----
-
 ### **3. Database Security Threats**
 
 | **Threat**                  | **Description**                                             | **Mitigation**                                              |
@@ -500,8 +478,6 @@ Database security refers to **protecting the database** from unauthorized access
 | **Privilege Abuse**         | Users misuse excessive privileges.                          | Follow the least privilege principle & audit user activity. |
 | **Denial of Service (DoS)** | Attackers overload the database, causing it to crash.       | Implement rate-limiting & database firewalls.               |
 | **Malware & Ransomware**    | Malicious software corrupts or encrypts data.               | Use **antivirus software** and **regular backups**.         |
-
----
 
 ### **4. Security Compliance & Standards**
 
@@ -516,9 +492,7 @@ Organizations must comply with **legal and industry regulations** to secure data
 | **PCI-DSS (Payment Card Industry Data Security Standard)**      | Protects credit card transactions.                     |
 | **ISO 27001**                                                   | Establishes information security management standards. |
 
----
-
-### **5. Summary Table**
+### **Summary Table**
 
 | **Security Aspect**                | **Key Measures**                               |
 | ---------------------------------- | ---------------------------------------------- |
@@ -529,9 +503,7 @@ Organizations must comply with **legal and industry regulations** to secure data
 | **Backups & Disaster Recovery**    | Ensures data availability & integrity          |
 | **Firewalls & Network Security**   | Restricts unauthorized access                  |
 
----
-
-### **6. Conclusion**
+### **Conclusion**
 
 - **Database security is essential** to protect sensitive data from breaches and attacks.
 - **Implementing best practices** (e.g., encryption, access control, auditing) strengthens security.
