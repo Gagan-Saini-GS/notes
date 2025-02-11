@@ -1424,7 +1424,7 @@ int main() {
 }
 ```
 
-## 📌 **`new(nothrow)`** returns **NULL instead of throwing an exception**.
+> 📌 **`new(nothrow)`** returns **NULL instead of throwing an exception**.
 
 ---
 
