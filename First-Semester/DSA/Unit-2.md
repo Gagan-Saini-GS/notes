@@ -1212,7 +1212,7 @@ int main() {
 
 ---
 
-## **1. Error Handling in C++**
+## **Error Handling in C++**
 
 Errors can be handled using:
 
@@ -1228,7 +1228,7 @@ C++ provides the **exception handling mechanism** using:
 - `try` → Wraps the code where an exception might occur.
 - `catch` → Handles the exception.
 
-### **Example: Handling Division by Zero**
+#### **Example: Handling Division by Zero**
 
 ```cpp
 #include <iostream>
@@ -1251,7 +1251,7 @@ int main() {
 }
 ```
 
-### **Output**
+#### **Output**
 
 ```
 Exception: Division by zero error!
@@ -1295,7 +1295,7 @@ int main() {
 }
 ```
 
-### **Output**
+#### **Output**
 
 ```
 Caught a string: String Exception
@@ -1335,7 +1335,7 @@ int main() {
 }
 ```
 
-### **Output**
+#### **Output**
 
 ```
 Caught Exception: Custom runtime error!
@@ -1394,7 +1394,7 @@ int main() {
 }
 ```
 
-### **Output**
+#### **Output**
 
 ```
 Array Elements: 0 10 20 30 40
@@ -1424,13 +1424,15 @@ int main() {
 }
 ```
 
-📌 **`new(nothrow)`** returns **NULL instead of throwing an exception**.
+## 📌 **`new(nothrow)`** returns **NULL instead of throwing an exception**.
 
-### **Smart Pointers (Automatic Memory Management)**
+---
+
+## **Smart Pointers (Automatic Memory Management)**
 
 C++11 introduced **smart pointers** in `<memory>` to **avoid memory leaks**.
 
-#### **3.1 `unique_ptr` (Auto-deletes Memory)**
+### **3.1 `unique_ptr` (Auto-deletes Memory)**
 
 ```cpp
 #include <iostream>
@@ -1446,7 +1448,7 @@ int main() {
 
 📌 **`unique_ptr` deletes memory automatically when it goes out of scope.**
 
-#### **3.2 `shared_ptr` (Shared Ownership)**
+### **3.2 `shared_ptr` (Shared Ownership)**
 
 ```cpp
 #include <iostream>
@@ -1464,7 +1466,7 @@ int main() {
 
 📌 **`shared_ptr` keeps a reference count** and deletes memory when **no owners remain**.
 
-#### **3.3 `weak_ptr` (Prevents Cyclic References)**
+### **3.3 `weak_ptr` (Prevents Cyclic References)**
 
 ```cpp
 #include <iostream>
