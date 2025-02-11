@@ -1128,99 +1128,6 @@ Finds the shortest path from a **single source** node to **all other nodes** in 
 
 ```cpp
 #include <iostream>
-#include <vector>
-#include <queue>
-#include <climits>
-
-using namespace std;
-
-struct Edge {
-    int vertex, weight;
-    bool operator>(const Edge &other) const {
-        return weight > other.weight; // Min-Heap (Priority Queue)
-    }
-};
-
-void Dijkstra(vector<vector<Edge>> &adj, int V, int src) {
-    vector<int> dist(V, INT_MAX);
-    priority_queue<Edge, vector<Edge>, greater<Edge>> pq;
-
-    dist[src] = 0;
-    pq.push({src, 0});
-
-    while (!pq.empty()) {
-        int u = pq.top().vertex;
-        int currentDist = pq.top().weight;
-        pq.pop();
-
-        if (currentDist > dist[u]) continue;
-
-        for (Edge &e : adj[u]) {
-            int v = e.vertex;
-            int weight = e.weight;
-
-            if (dist[u] + weight < dist[v]) {
-                dist[v] = dist[u] + weight;
-                pq.push({v, dist[v]});
-            }
-        }
-    }
-
-    // Print shortest distances
-    cout << "Vertex\tDistance from Source (" << src << ")\n";
-    for (int i = 0; i < V; i++)
-        cout << i << "\t" << dist[i] << "\n";
-}
-
-int main() {
-    int V = 5;
-    vector<vector<Edge>> adj(V);
-
-    // Adding weighted edges (Directed Graph)
-    adj[0].push_back({1, 10});
-    adj[0].push_back({4, 5});
-    adj[1].push_back({2, 1});
-    adj[1].push_back({4, 2});
-    adj[2].push_back({3, 4});
-    adj[3].push_back({0, 7});
-    adj[3].push_back({2, 6});
-    adj[4].push_back({1, 3});
-    adj[4].push_back({2, 9});
-    adj[4].push_back({3, 2});
-
-    int src = 0;
-    Dijkstra(adj, V, src);
-
-    return 0;
-}
-```
-
-### **Output**
-
-```
-Vertex  Distance from Source (0)
-0       0
-1       8
-2       9
-3       7
-4       5
-```
-
----
-
-## **All Pairs Shortest Path**
-
-Finds the shortest path **between every pair** of vertices.
-
-### **Dijkstra’s Algorithm (All-Pairs)**
-
-✅ Runs **Dijkstra’s algorithm for every vertex as a source**  
-✅ Time Complexity: **\(O(V (E + V \log V))\)**
-
-### **C++ Code for All-Pairs Dijkstra Algorithm**
-
-```cpp
-#include <iostream>
 #include <queue>
 using namespace std;
 
@@ -1322,6 +1229,107 @@ int main()
     }
 
     delete[] edges;
+    return 0;
+}
+```
+
+### **Output**
+
+```
+Vertex  Distance from Source (0)
+0       0
+1       8
+2       9
+3       7
+4       5
+```
+
+---
+
+## **All Pairs Shortest Path**
+
+Finds the shortest path **between every pair** of vertices.
+
+### **Dijkstra’s Algorithm (All-Pairs)**
+
+✅ Runs **Dijkstra’s algorithm for every vertex as a source**  
+✅ Time Complexity: **\(O(V (E + V \log V))\)**
+
+### **C++ Code for All-Pairs Dijkstra Algorithm**
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <climits>
+
+using namespace std;
+
+struct Edge {
+    int vertex, weight;
+    bool operator>(const Edge &other) const {
+        return weight > other.weight; // Min-Heap
+    }
+};
+
+vector<int> Dijkstra(vector<vector<Edge>> &adj, int V, int src) {
+    vector<int> dist(V, INT_MAX);
+    priority_queue<Edge, vector<Edge>, greater<Edge>> pq;
+
+    dist[src] = 0;
+    pq.push({src, 0});
+
+    while (!pq.empty()) {
+        int u = pq.top().vertex;
+        int currentDist = pq.top().weight;
+        pq.pop();
+
+        if (currentDist > dist[u]) continue;
+
+        for (Edge &e : adj[u]) {
+            int v = e.vertex;
+            int weight = e.weight;
+
+            if (dist[u] + weight < dist[v]) {
+                dist[v] = dist[u] + weight;
+                pq.push({v, dist[v]});
+            }
+        }
+    }
+
+    return dist;
+}
+
+void AllPairsDijkstra(vector<vector<Edge>> &adj, int V) {
+    cout << "All Pairs Shortest Paths:\n";
+
+    for (int src = 0; src < V; src++) {
+        vector<int> dist = Dijkstra(adj, V, src);
+        cout << "From Vertex " << src << ":\n";
+        for (int i = 0; i < V; i++)
+            cout << "  To " << i << ": " << (dist[i] == INT_MAX ? -1 : dist[i]) << "\n";
+        cout << endl;
+    }
+}
+
+int main() {
+    int V = 4;
+    vector<vector<Edge>> adj(V);
+
+    // Adding weighted edges
+    adj[0].push_back({1, 3});
+    adj[0].push_back({2, 7});
+    adj[1].push_back({0, 3});
+    adj[1].push_back({2, 1});
+    adj[1].push_back({3, 5});
+    adj[2].push_back({0, 7});
+    adj[2].push_back({1, 1});
+    adj[2].push_back({3, 2});
+    adj[3].push_back({1, 5});
+    adj[3].push_back({2, 2});
+
+    AllPairsDijkstra(adj, V);
+
     return 0;
 }
 ```
