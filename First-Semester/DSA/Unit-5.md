@@ -1221,77 +1221,107 @@ Finds the shortest path **between every pair** of vertices.
 
 ```cpp
 #include <iostream>
-#include <vector>
 #include <queue>
-#include <climits>
-
 using namespace std;
 
-struct Edge {
-    int vertex, weight;
-    bool operator>(const Edge &other) const {
-        return weight > other.weight; // Min-Heap
+// Dijkstra Algorithm is used to find minimum distance between two vertices(source to destination)
+// Here I am finding minimum distance for all vertices from source
+
+void DijkstraAlgo(int **edges, int n, int source)
+{
+    bool *visited = new bool[n];
+    for (int i = 0; i < n; i++)
+    {
+        visited[i] = false;
     }
-};
 
-vector<int> Dijkstra(vector<vector<Edge>> &adj, int V, int src) {
-    vector<int> dist(V, INT_MAX);
-    priority_queue<Edge, vector<Edge>, greater<Edge>> pq;
+    int *distance = new int[n];
+    for (int i = 0; i < n; i++)
+    {
+        distance[i] = INT16_MAX;
+    }
 
-    dist[src] = 0;
-    pq.push({src, 0});
+    distance[source] = 0;
 
-    while (!pq.empty()) {
-        int u = pq.top().vertex;
-        int currentDist = pq.top().weight;
-        pq.pop();
-
-        if (currentDist > dist[u]) continue;
-
-        for (Edge &e : adj[u]) {
-            int v = e.vertex;
-            int weight = e.weight;
-
-            if (dist[u] + weight < dist[v]) {
-                dist[v] = dist[u] + weight;
-                pq.push({v, dist[v]});
+    int count = 0;
+    while (count < n - 1)
+    {
+        // Step 1 -> Find minimum weight along the un-visited vertices
+        int minDistance = INT16_MAX;
+        int minDistanceIndex;
+        for (int i = 0; i < n; i++)
+        {
+            if (!visited[i] && distance[i] < minDistance)
+            {
+                minDistance = distance[i];
+                minDistanceIndex = i;
             }
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            if (edges[minDistanceIndex][i] != 0 && !visited[i])
+            {
+                if (edges[minDistanceIndex][i] + distance[minDistanceIndex] < distance[i])
+                {
+                    distance[i] = edges[minDistanceIndex][i] + distance[minDistanceIndex];
+                }
+            }
+        }
+        visited[minDistanceIndex] = true;
+        count++;
+    }
+
+    //  Output
+    for (int i = 0; i < n; i++)
+    {
+        cout << "From " << source << " To " << i << " " << distance[i] << endl;
+    }
+
+    delete[] visited;
+    delete[] distance;
+}
+
+// Input -> 6 11 5 0 1 2 0 2 1 0 3 3 1 2 4 1 3 7 2 3 6 2 4 9 2 5 8 3 5 10 3 4 11 4 5
+// Input -> 5 7 4 0 1 8 0 2 2 1 2 9 2 4 5 3 4 3 2 3 6 1 3
+// Input -> 5 7 4 0 1 8 0 2 2 1 2 9 2 4 4 3 4 5 2 3 5 1 3
+
+int main()
+{
+    // n : Number of vertices
+    // e : Number of edges
+    int n, e;
+    cin >> n >> e;
+
+    // Adjancy matrix which holds all edges
+    int **edges = new int *[n];
+    for (int i = 0; i < n; i++)
+    {
+        edges[i] = new int[n];
+        for (int j = 0; j < n; j++)
+        {
+            edges[i][j] = 0;
         }
     }
 
-    return dist;
-}
-
-void AllPairsDijkstra(vector<vector<Edge>> &adj, int V) {
-    cout << "All Pairs Shortest Paths:\n";
-
-    for (int src = 0; src < V; src++) {
-        vector<int> dist = Dijkstra(adj, V, src);
-        cout << "From Vertex " << src << ":\n";
-        for (int i = 0; i < V; i++)
-            cout << "  To " << i << ": " << (dist[i] == INT_MAX ? -1 : dist[i]) << "\n";
-        cout << endl;
+    for (int i = 0; i < e; i++)
+    {
+        // f : first vertices of edge
+        // s : second vertices of edge
+        int s, d, w;
+        cin >> w >> s >> d;
+        edges[s][d] = w;
+        edges[d][s] = w;
     }
-}
 
-int main() {
-    int V = 4;
-    vector<vector<Edge>> adj(V);
+    DijkstraAlgo(edges, n, 0);
 
-    // Adding weighted edges
-    adj[0].push_back({1, 3});
-    adj[0].push_back({2, 7});
-    adj[1].push_back({0, 3});
-    adj[1].push_back({2, 1});
-    adj[1].push_back({3, 5});
-    adj[2].push_back({0, 7});
-    adj[2].push_back({1, 1});
-    adj[2].push_back({3, 2});
-    adj[3].push_back({1, 5});
-    adj[3].push_back({2, 2});
+    for (int i = 0; i < n; i++)
+    {
+        delete[] edges[i];
+    }
 
-    AllPairsDijkstra(adj, V);
-
+    delete[] edges;
     return 0;
 }
 ```
