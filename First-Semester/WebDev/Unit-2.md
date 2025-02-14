@@ -660,4 +660,48 @@ window.location.href = "https://www.example.com"; // Redirect to another page
 
 ---
 
+## **Exam Questions**
+
+### **2-Marks Questions**
+
+1. Define JavaScript.
+2. What is DHTML?
+3. What is the DOM?
+4. What is JSON?
+5. List any four JavaScript operators.
+6. Define a function in JavaScript.
+7. What is the difference between `==` and `===`?
+8. What does `document.getElementById()` do?
+9. What is an event in JavaScript?
+
+### **4-Marks Questions**
+
+1. Explain different types of loops in JavaScript with examples.
+2. What is an object in JavaScript?
+3. List and explain three JavaScript functions.
+4. What are objects in JavaScript? Give an example.
+5. How does JavaScript handle user events? Provide an example.
+6. Explain the use of the `switch` statement with an example.
+7. Explain the different ways to declare a function in JavaScript.
+
+### **8-Marks Questions**
+
+1. Discuss the various types of loops in JavaScript with code examples.
+2. Discuss JavaScript functions with types.
+3. Explain form validation in JavaScript.
+4. Write and explain JSON.stringify() and JSON.parse().
+5. Explain JavaScript, including its features, uses, and examples.
+6. Explain conditional statements in JavaScript with multiple examples.
+7. Explain JavaScript objects and their importance with detailed examples.
+8. What is the DOM? Explain how JavaScript can interact with HTML elements using the DOM.
+9. Discuss JavaScript event handling with practical examples.
+10. Explain the working of form validation in JavaScript with a complete example.
+11. What is DHTML? Explain its components and how JavaScript enhances web interactivity.
+12. Describe how JavaScript interacts with the browser and controls navigation.
+13. Write a JavaScript program demonstrating all key concepts such as loops, functions, and objects.
+
+> Thanks Sumit for your valuable contribution and time.
+
+---
+
 ## **`Gagan Saini`**
