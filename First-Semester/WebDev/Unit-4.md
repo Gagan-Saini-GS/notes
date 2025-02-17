@@ -22,6 +22,8 @@ Common ADO.NET Data Providers:
 - **ODBC Provider** (`System.Data.Odbc`) – Works with ODBC-compatible databases.
 - **Oracle Provider** (`System.Data.OracleClient`) – Optimized for Oracle databases.
 
+> OLE DB stands for Object Linking Embeded DB.
+
 #### **2. DataSet (Disconnected Architecture)**
 
 A **DataSet** is an in-memory representation of data that can hold multiple **DataTables**. It allows applications to work with data without maintaining an active database connection.
