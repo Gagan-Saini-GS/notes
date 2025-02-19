@@ -329,7 +329,7 @@ Networking standards are a set of guidelines and rules that ensure interoperabil
 
 ### **Types of Networking Standards**
 
-#### **1. International Standards Organizations**
+### **1. International Standards Organizations**
 
 These organizations establish and maintain networking standards:
 
@@ -376,6 +376,10 @@ These organizations establish and maintain networking standards:
 ✅ **Security** – Helps define secure communication and encryption methods.  
 ✅ **Scalability** – Supports network growth and expansion.  
 ✅ **Cost-effectiveness** – Reduces costs by ensuring compatibility with existing infrastructure.
+
+### Different b/w Protocols and Network Standards
+
+→ It's like you are going to a school and school has a fixed uniform standards (as Network standard) and the colors of uniform is the part such colors in protocol.
 
 ---
 
