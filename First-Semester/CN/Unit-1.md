@@ -34,6 +34,34 @@ Networking is the practice of connecting computers and other devices to share re
 
 ---
 
+## Network Topology
+
+Network topology refers to the arrangement of different elements (links, nodes, etc.) in a computer network. It defines the layout of a network, including how devices are connected and how data is transmitted between them. Here are some common types of network topologies:
+
+### Bus Topology
+
+All devices share a single communication line or bus. Data travels in both directions along the bus.
+
+### Star Topology
+
+All devices are connected to a central hub. Data passes through the hub to reach other devices.
+
+### Ring Topology
+
+Devices are connected in a circular fashion, and data travels in one direction around the ring.
+
+### Mesh Topology
+
+Every device is connected to every other device, providing multiple paths for data to travel.
+
+### Tree Topology
+
+A hybrid topology that combines characteristics of star and bus topologies. Devices are connected in a hierarchical manner.
+
+> Each topology has its advantages and disadvantages in terms of cost, performance, and reliability.
+
+---
+
 ## **Data Communication**
 
 Data communication refers to the exchange of data between devices using a transmission medium. It involves sending, receiving, and processing data to ensure successful communication between computers and other network devices.
