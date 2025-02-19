@@ -251,14 +251,14 @@ Computer networks can be classified based on their size, geographical coverage, 
 
 ### **Comparison Table**
 
-| Network Type | Coverage Area                | Example                   |
-| ------------ | ---------------------------- | ------------------------- |
-| **PAN**      | Few meters                   | Bluetooth, Infrared       |
-| **LAN**      | Building/Campus              | Home/Office Wi-Fi         |
-| **MAN**      | City-wide                    | City Wi-Fi, Cable TV      |
-| **WAN**      | Country/Global               | Internet, Banking Network |
-| **WLAN**     | Similar to LAN, but wireless | Home/Office Wi-Fi         |
-| **VPN**      | Secure virtual connection    | Remote work access        |
+| Network Type | Full Form                   | Coverage Area                | Example                   |
+| ------------ | --------------------------- | ---------------------------- | ------------------------- |
+| **PAN**      | Personal Area Network       | Few meters                   | Bluetooth, Infrared       |
+| **LAN**      | Local Area Network          | Building/Campus              | Home/Office Wi-Fi         |
+| **MAN**      | Metropolitan Area Network   | City-wide                    | City Wi-Fi, Cable TV      |
+| **WAN**      | Wide Area Network           | Country/Global               | Internet, Banking Network |
+| **WLAN**     | Wireless Local Area Network | Similar to LAN, but wireless | Home/Office Wi-Fi         |
+| **VPN**      | Virtual Private Network     | Secure virtual connection    | Remote work access        |
 
 ---
 
@@ -276,7 +276,7 @@ A **protocol** is a set of rules and conventions that define how data is transmi
 - **HTTP/HTTPS (Hypertext Transfer Protocol/Secure)** – Used for web browsing.
 - **FTP (File Transfer Protocol)** – Transfers files between computers.
 - **SMTP (Simple Mail Transfer Protocol)** – Sends emails.
-- **IMAP/POP3** – Retrieves emails from a server.
+- **IMAP (Internet Message Access Protocol)/POP3(Post Office Protocol)** – Retrieves emails from a server.
 
 🔹 **Network Security Protocols**
 
@@ -435,6 +435,110 @@ The **TCP/IP Model** is a **4-layer** model developed by the **U.S. Department o
 - **OSI Model** = **Theoretical, 7 layers**, used for understanding networking.
 - **TCP/IP Model** = **Practical, 4 layers**, used for the **Internet & real-world networks**.
 - TCP/IP is simpler but follows similar principles as OSI.
+
+---
+
+## OSI Model in Detail
+
+The **OSI (Open Systems Interconnection) model** is a conceptual framework used to understand and standardize network communication. It consists of **seven layers**, each with distinct functions, working together to facilitate the transmission of data across a network.
+
+### **7 Layers of the OSI Model**
+
+Each layer serves a specific purpose in the communication process.
+
+#### **1. Physical Layer (Layer 1)**
+
+- **Function**: Transmits raw bitstreams (0s and 1s) over a physical medium.
+- **Key Components**:
+  - Cables (Ethernet, fiber optic, coaxial)
+  - Hubs, repeaters
+  - Radio waves (for wireless communication)
+- **Protocols**: Ethernet, USB, Bluetooth, DSL
+
+#### **2. Data Link Layer (Layer 2)**
+
+- **Function**: Establishes a reliable link between two directly connected nodes. It is responsible for error detection, correction, and MAC (Media Access Control) addressing.
+- **Key Components**:
+  - Network switches
+  - MAC addresses
+  - Frames and error handling (CRC)
+- **Protocols**: Ethernet, PPP (Point-to-Point Protocol), ARP (Address Resolution Protocol), VLAN
+
+#### **3. Network Layer (Layer 3)**
+
+- **Function**: Determines the best path for data to travel between devices on different networks (routing).
+- **Key Components**:
+  - Routers
+  - Logical addressing (IP addresses)
+- **Protocols**: IP (IPv4, IPv6), ICMP (ping), RIP, OSPF, BGP
+
+#### **4. Transport Layer (Layer 4)**
+
+- **Function**: Ensures reliable data transmission through segmentation, flow control, and error handling.
+- **Key Components**:
+  - Segmentation and reassembly
+  - TCP (Transmission Control Protocol) for reliable delivery
+  - UDP (User Datagram Protocol) for faster, connectionless delivery
+- **Protocols**: TCP, UDP, SCTP
+
+#### **5. Session Layer (Layer 5)**
+
+- **Function**: Manages and controls connections between applications.
+- **Key Components**:
+  - Session establishment, maintenance, and termination
+  - Authentication and synchronization
+- **Protocols**: NetBIOS, RPC (Remote Procedure Call), PPTP (Point-to-Point Tunneling Protocol)
+
+#### **6. Presentation Layer (Layer 6)**
+
+- **Function**: Translates, encrypts, and compresses data to ensure compatibility between different systems.
+- **Key Components**:
+  - Data encryption/decryption (SSL/TLS)
+  - Data format translation (ASCII, EBCDIC, JPEG, MP3)
+- **Protocols**: SSL/TLS, JPEG, MPEG, GIF, ASCII, EBCDIC
+
+#### **7. Application Layer (Layer 7)**
+
+- **Function**: Provides network services directly to end-users and applications.
+- **Key Components**:
+  - Web browsing, email, file transfers
+- **Protocols**: HTTP, HTTPS, FTP, SMTP, POP3, IMAP, DNS, SNMP
+
+### **How Data Moves Through the OSI Model**
+
+When data is transmitted, it moves **down** the OSI layers (encapsulation), and when received, it moves **up** the OSI layers (decapsulation).
+
+1. **Sender Side**:
+
+   - Application layer creates the message.
+   - Presentation layer formats/encrypts it.
+   - Session layer manages connection.
+   - Transport layer segments data.
+   - Network layer adds source/destination IP.
+   - Data link layer adds MAC addresses.
+   - Physical layer sends bits over the medium.
+
+2. **Receiver Side**:
+   - Physical layer receives bits.
+   - Data link layer extracts MAC addresses.
+   - Network layer extracts IP addresses.
+   - Transport layer reassembles data.
+   - Session layer ensures correct delivery.
+   - Presentation layer decodes format.
+   - Application layer presents the data to the user.
+
+### **Comparison: OSI Model vs. TCP/IP Model**
+
+| Feature         | OSI Model (7 Layers) | TCP/IP Model (4 Layers)                              |
+| --------------- | -------------------- | ---------------------------------------------------- |
+| **Usage**       | Theoretical model    | Practical implementation                             |
+| **Layers**      | 7                    | 4 (Application, Transport, Internet, Network Access) |
+| **Protocols**   | Broad set            | Focused on TCP/IP                                    |
+| **Flexibility** | More structured      | More flexible                                        |
+
+### **Conclusion**
+
+The OSI model is a crucial framework for understanding how networks communicate. While the **TCP/IP model** is used in real-world networking (such as the internet), the OSI model remains important for learning, troubleshooting, and designing networks.
 
 ---
 
