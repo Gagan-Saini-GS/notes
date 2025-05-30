@@ -120,12 +120,12 @@ x = y = z = 100
 
 ---
 
-## 🔹 **What is a Class?**
+## **What is a Class?**
 
 - A **class** is a **blueprint** for creating objects.
 - It defines **attributes (variables)** and **methods (functions)** that the objects created from the class can use.
 
-### 🔹 **Creating a Class**
+### **Creating a Class**
 
 ```python
 class Student:
@@ -141,14 +141,14 @@ class Student:
 - `__init__()` → Special method called a **constructor**, used to initialize object properties.
 - `self` → Refers to the current object.
 
-### 🔹 **Creating Objects (Instances)**
+### **Creating Objects (Instances)**
 
 ```python
 s1 = Student("Alice", 101)
 s1.display()   # Output: Name: Alice, Roll: 101
 ```
 
-### 🔹 **Attributes**
+### **Attributes**
 
 - **Instance attributes**: Defined inside `__init__()` with `self`.
 - **Class attributes**: Shared across all instances.
@@ -163,7 +163,7 @@ class Demo:
 print(Demo.count)  # Accessing class attribute
 ```
 
-### 🔹 **Methods**
+### **Methods**
 
 - Functions defined inside a class.
 - Always have `self` as the first parameter to access instance data.
@@ -174,7 +174,7 @@ class Car:
         print("Engine started")
 ```
 
-### 🔹 **Types of Methods**
+### **Types of Methods**
 
 | Method Type     | Description                                            |
 | --------------- | ------------------------------------------------------ |
@@ -193,7 +193,7 @@ class Example:
         print("Static Method")
 ```
 
-### 🔹 **Inheritance**
+### **Inheritance**
 
 - A class can **inherit** properties and methods from another class.
 
@@ -210,17 +210,17 @@ d = Dog()
 d.sound()  # Output: Bark
 ```
 
-### 🔹 **Encapsulation**
+### **Encapsulation**
 
 - Wrapping data and code into a single unit (class).
 - Use `_` (protected) or `__` (private) to control access.
 
-### 🔹 **Polymorphism**
+### **Polymorphism**
 
 - Ability to use a function/class in different ways.
 - Example: Same method name behaves differently in parent and child classes.
 
-### 🔹 **Destructor**
+### **Destructor**
 
 - `__del__()` method: Called when an object is deleted.
 
@@ -232,7 +232,7 @@ class Demo:
 
 ---
 
-## 🔹 **Modules in Python**
+## **Modules in Python**
 
 ### ✅ What is a Module?
 
@@ -286,7 +286,7 @@ print(dir(math))
 
 ---
 
-## 🔹 **Syntax and Style**
+## **Syntax and Style**
 
 ### ✅ Python Syntax Basics
 
@@ -325,7 +325,7 @@ def add(x, y):
 
 ---
 
-## 🔹 **Statements in Python**
+## **Statements in Python**
 
 ### ✅ Types of Statements
 
@@ -390,7 +390,7 @@ total = (1 + 2 + 3 +
 
 ---
 
-## 🔹 **Variable Assignment**
+## **Variable Assignment**
 
 ### ✅ Basics
 
@@ -418,7 +418,7 @@ a, b = b, a
 
 ---
 
-## 🔹 **Identifiers**
+## **Identifiers**
 
 ### ✅ What is an Identifier?
 
@@ -442,7 +442,7 @@ a, b = b, a
 
 ---
 
-## 🔹 **Basic Style Guidelines (PEP 8)**
+## **Basic Style Guidelines (PEP 8)**
 
 Python follows **PEP 8** as the official style guide.
 
@@ -479,7 +479,7 @@ import sys
 
 ---
 
-## 🔹 **Memory Management in Python**
+## **Memory Management in Python**
 
 ### ✅ Key Concepts
 
